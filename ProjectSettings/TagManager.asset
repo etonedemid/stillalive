@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - wall
+  - Bullet
+  - level
+  - enemy
+  - bomb
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Bomb
+  - Water
+  - UI
+  - Bullet
+  - Player
+  - wall
+  - enemy
+  - enemydie
+  - enemybullet
+  - enemywall
+  - ammocrate
+  - postprocess
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: New Layer 1
+    uniqueID: 3210355923
+    locked: 0
+  - name: MG_Ground
+    uniqueID: 68269
+    locked: 0
+  - name: MG_Water
+    uniqueID: 72606
+    locked: 0
+  - name: MG_Objects
+    uniqueID: 60981
+    locked: 0
