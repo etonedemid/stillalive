@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 14675264}
   - component: {fileID: 14675263}
   - component: {fileID: 14675262}
-  - component: {fileID: 14675265}
   m_Layer: 0
   m_Name: robot
   m_TagString: Player
@@ -223,20 +222,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &14675265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14675259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b509bc9ceff1340a6a93f7e36319ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  killCounter: 0
-  killneed: 0
 --- !u!1 &216528118
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +780,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1498145268}
         m_TargetAssemblyTypeName: playbutton, Assembly-CSharp
-        m_MethodName: Playgraveyard
+        m_MethodName: Playconstruction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1160,7 +1145,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1498145268}
         m_TargetAssemblyTypeName: playbutton, Assembly-CSharp
-        m_MethodName: Playconstruction
+        m_MethodName: Playgraveyard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
