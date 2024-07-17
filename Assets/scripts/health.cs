@@ -39,7 +39,6 @@ public class Health : MonoBehaviour
     yield return new WaitForSeconds(0.1f);
     Time.timeScale = 0;
     deathMenu.SetActive(true);
-    Destroy(gameObject);
     }
 
     public void restart()

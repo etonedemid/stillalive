@@ -41,7 +41,7 @@ public class playbutton : MonoBehaviour
     {
         Time.timeScale = 1;
         uiscript.isGamePaused = false;
-        SceneManager.LoadScene("grave");
+        SceneManager.LoadScene("graveyard");
     }
     public void Mainmenu()
     {

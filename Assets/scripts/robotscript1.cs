@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,8 +15,11 @@ public class robotscriptsurvival : MonoBehaviour
     Vector2 direction;
     private bool isUsingController = false;
 
+    GameObject camerafollowpoint;
+
     void Start()
     {
+        camerafollowpoint = GameObject.Find("camerafollowpoint");
         fire = GameObject.Find("firepoint").GetComponent<fire>();
         if (fire.weapon == "shotgun")
         {
@@ -28,17 +32,16 @@ public class robotscriptsurvival : MonoBehaviour
         killCounter = 0;
         legs = GameObject.Find("legs");
         cursor = GameObject.Find("cursor");
-
-        // Initialize input system detection
     }
 
     void Update()
     {
-        transform.position = legs.transform.position;
-    if (Gamepad.current != null){    
-    if (Gamepad.current.rightStick.ReadValue() != Vector2.zero) RotateUsingController();
-    else RotateTowardsMouse();}
-    else RotateTowardsMouse();
+    
+    transform.position = legs.transform.position;
+    if (!incar.active) 
+     {
+    RotateUsingController();
+    }
     }
 
     public void Killed()
@@ -58,28 +61,6 @@ public class robotscriptsurvival : MonoBehaviour
             killCounter = 0;
         }
     }
-
-    void RotateTowardsMouse()
-{
-    // Ensure the cursor is visible if needed (optional)
-    Cursor.visible = true;
-
-    // Convert mouse screen position to world position
-    Vector3 mouseScreenPosition = Mouse.current.position.ReadValue();
-    Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, Camera.main.nearClipPlane));
-
-    // Compute the direction vector from the character to the mouse world position
-    Vector2 direction = (Vector2)(mouseWorldPosition - transform.position);
-
-    // Calculate the angle required to rotate the character to face the cursor
-    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
-
-    // Apply the calculated rotation to the character
-    transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-}
-
-
-
 
     void RotateUsingController()
 {

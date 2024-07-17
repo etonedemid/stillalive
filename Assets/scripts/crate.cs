@@ -1,5 +1,6 @@
-using UnityEngine;
 
+using UnityEngine;
+using UnityEngine.SceneManagement;
 public class ammocrate : MonoBehaviour
 {
     GameObject robot;
@@ -32,25 +33,13 @@ public class ammocrate : MonoBehaviour
                 if(fire.reloadTime - 0.5f >= 0) fire.reloadTime -= 0.2f; fire.fireRate += 1f;
                 break;
             case "crate1(Clone)":
-                hp.currentHealth += 2;
-                move.speed += 0.5f;
+                hp.currentHealth += 4;
+                move.speed += 0.25f;
                 break;
-            case "crate3(Clone)":
-            spawnbomb();
-            spawnbomb();
-            spawnbomb();
-            break;
         }
-
+        Scoretext.score += 1000;
+        if (SceneManager.GetActiveScene().name != "dungeon") Instantiate(Resources.Load("plus1000"), transform.position, Quaternion.identity);
         powerup.powervignette();
         Destroy(gameObject);
-    }
-    void spawnbomb()
-    {
-        GameObject bombObject = (GameObject)Instantiate(Resources.Load("bomb1"), legs.transform.position, Quaternion.identity);
-            bombObject.transform.localScale = new Vector3(4, 4, 0);
-            bombObject.GetComponent<Bomb1>().bombPoint = GameObject.Find("bombpoint" + Random.Range(1, 7).ToString());
-            bombObject.GetComponent<Bomb1>().speed = Random.Range(15f, 18f);
-            bombObject.SetActive(true);
     }
 }

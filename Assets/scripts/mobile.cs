@@ -4,18 +4,39 @@ using UnityEngine;
 
 public class mobile : MonoBehaviour
 {
-    GameObject mobileinput;
+    public GameObject carin;
+    public GameObject outcar;
+
     void Start()
     {
-        mobileinput = GameObject.Find("phoneinput");
-        if (!Application.isMobilePlatform)
-        {
-            mobileinput.SetActive(false);
-        }
+        carin = GameObject.Find("incar");
+        outcar = GameObject.Find("outcar");
     }
     void Update()
+{
+    if (Time.timeScale == 0)
     {
-        if (Time.timeScale == 0 || uiscript.isGamePaused) mobileinput.SetActive(false);
-        else if (Application.isMobilePlatform) mobileinput.SetActive(true);
+        Debug.Log("Game is paused");
+        return;
     }
+
+    Debug.Log("Game is running");
+
+        // Check incar.active and handle accordingly
+        if (incar.active)
+        {
+            Debug.Log("In car");
+            carin.SetActive(true);
+            outcar.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Not in car");
+            carin.SetActive(false);
+            outcar.SetActive(true);
+        }
+    
+}
+
+
 }

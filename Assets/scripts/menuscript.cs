@@ -15,7 +15,7 @@ public class menuscript : MonoBehaviour
     }
     void Update()
     {
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Gamepad.current.startButton.wasPressedThisFrame)
         {
             gamemenu.SetActive(true);
             Time.timeScale = 0;

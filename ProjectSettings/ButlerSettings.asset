@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 743bbf64120a59b4d920157af9723d65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildTarget: 20
+  BuildTarget: 19
   Account: etonedemid
   Project: stillalive
   OverrideChannel: 0
   Channel: 
   OverrideVersion: 1
-  Version: YES.HAHA
+  Version: 0.2.5.1
   OverrideBuildDirectory: 0
   BuildDirectory: 
   ConfirmUpload: 0
