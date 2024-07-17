@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.SceneManagement;
 public class DeathScript : MonoBehaviour
 {
     public GameObject bullet;
@@ -22,6 +23,11 @@ public class DeathScript : MonoBehaviour
         robotscript.Killed();
         Object bloodObject = Resources.Load("blood");
         GameObject blood = Instantiate(bloodObject, transform.position, Quaternion.identity) as GameObject;
+        Scoretext.score += 100;
+        if (Scoretext.score > PlayerPrefs.GetInt("highscore"))
+        if (SceneManager.GetActiveScene().name != "dungeon"){
+        PlayerPrefs.SetInt("highscore", Scoretext.score);
+        PlayerPrefs.Save();}
         Destroy(gameObject);
         }
     }

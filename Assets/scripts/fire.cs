@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class fire : MonoBehaviour
 {
+    public bool autofire;
     public string weapon;
     private AudioSource audioSource;
     public GameObject camera1;
@@ -48,8 +49,16 @@ public class fire : MonoBehaviour
 
     void Update()
     {
+        if (!incar.active){
+        
+            if (Gamepad.current.rightStick.ReadValue() != Vector2.zero)
+            {
+                Fire();
+            }
+        
+        
         if (uiscript.isGamePaused) return;
-        if (isReloading)return;
+        if (isReloading) return;
 
         if (currentAmmo <= 0)
         {
@@ -57,16 +66,12 @@ public class fire : MonoBehaviour
             return;
         }
 
-        if (Mouse.current != null) if (Mouse.current.leftButton.isPressed) 
+        if (Gamepad.current.rightTrigger.isPressed)
         {
             Fire();
         }
         
-        if (Gamepad.current != null){
-        if (Gamepad.current.rightTrigger.isPressed)
-        {
-            Fire();
-        }}
+        }
     }
 
     void Fire()

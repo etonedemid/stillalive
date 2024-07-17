@@ -15,6 +15,13 @@ public class mobilecam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (incar.active)
+        {
+            GetComponent<Cinemachine.CinemachineVirtualCamera>().m_Lens.OrthographicSize = 20;
+        }
+        else
+        {
+            GetComponent<Cinemachine.CinemachineVirtualCamera>().m_Lens.OrthographicSize = 12;
+        }
     }
 }

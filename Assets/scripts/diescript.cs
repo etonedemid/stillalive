@@ -5,9 +5,6 @@ using UnityEngine;
 public class diescript : MonoBehaviour
 {
     GameObject enemy;
-
-    public Collider2D collider1;
-    public int hp;
     void Start()
     {
         enemy = gameObject.transform.parent.gameObject;
